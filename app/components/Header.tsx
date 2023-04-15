@@ -3,24 +3,10 @@
 import React from 'react'
 import SearchBox from './SearchBox'
 import Image from 'next/image'
-import { getServerSession } from 'next-auth/next'
-import { useSession, signIn, signOut } from 'next-auth/react'
-
-import { authOptions } from '../api/auth/[...nextauth]'
 
 const Header = () => {
   const notification = '/assets/icons/notification.svg'
   const avatar = '/assets/avatar.png'
-
-  // const { data: session, status } = useSession()
-
-  // if (status === 'loading') {
-  //   return <div>Loading...</div>
-  // }
-
-  // if (!session) {
-  //   return <div>Not signed in</div>
-  // }
 
   return (
     <div className='flex flex-col gap-5 md:flex-row max-w-full justify-between items-center mb-10'>
@@ -47,11 +33,3 @@ const Header = () => {
 }
 
 export default Header
-
-// export async function getServerSideProps(context) {
-//   return {
-//     props: {
-//       session: await getServerSession(context.req, context.res, authOptions),
-//     },
-//   }
-// }
