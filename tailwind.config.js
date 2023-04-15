@@ -9,7 +9,6 @@ module.exports = {
     extend: {
       fontFamily: {
         montserrat: ['var(--font-montserrat)'],
-        // lato: ['Lato', 'sans-serif'],
         lato: ['var(--font-lato)'],
         openSans: ['var(--font-open-sans)'],
       },

@@ -12,7 +12,7 @@ const ScheduleCard = ({ tasks }: { tasks: Task[] }) => {
   const rightArrow = '/assets/icons/rightArrow.svg'
 
   return (
-    <div className='w-[300px] md:w-[480px] lg:w-1/2 rounded-[20px] h-[256px] px-10 py-[30px] bg-white'>
+    <div className='w-full lg:max-w-[480px] lg:w-1/2 rounded-[20px] h-[256px] px-10 py-[30px] bg-white'>
       <div className='flex justify-between pb-7'>
         <h3 className='font-montserrat font-bold text-base md:text-lg text-black'>
           Today's schedule

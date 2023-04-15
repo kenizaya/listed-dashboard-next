@@ -1,33 +1,14 @@
+'use client'
+
 import React from 'react'
 import Button from './Button'
-
-// import { signIn, useSession, signOut } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 const SignIn = () => {
-  //   const { data, status } = useSession()
-
-  //   if (status === 'loading') return <h1> loading... please wait</h1>
-  // if (status === 'authenticated') {
-  //   return (
-  //     <div>
-  //       <h1> hi {data.user.name}</h1>
-  //       <img src={data.user.image} alt={data.user.name + ' photo'} />
-  //       <button onClick={signOut}>sign out</button>
-  //     </div>
-  //   )
-  // }
-
-  // if (session) {
-  //   return (
-  //     <>
-  //       Signed in as {session.user.email} <br />
-  //       <button onClick={() => signOut()}>Sign out</button>
-  //     </>
-  //   )
-  // }
-
   const google = '/assets/icons/google.svg'
   const apple = '/assets/icons/apple.svg'
+
+  const router = useRouter()
 
   return (
     <div className='bg-[#f5f5f5] flex flex-col items-center justify-center md:w-3/5 h-full px-10 md:px-10 py-10 md:py-0'>
@@ -44,11 +25,13 @@ const SignIn = () => {
             className='w-[150px] md:w-[180px] h-[30px] rounded-[10px] bg-white text-xs text-[#858585]'
             text='Sign in with Google'
             icon={google}
+            onClick={() => router.push('/dashboard')}
           />
           <Button
             className='w-[150px] md:w-[180px] h-[30px] rounded-[10px] bg-white text-xs text-[#858585]'
             text='Sign in with Apple'
             icon={apple}
+            onClick={() => router.push('/dashboard')}
           />
         </div>
 
@@ -87,10 +70,12 @@ const SignIn = () => {
           <Button
             className='text-sm md:text-base font-lato text-[#346bd4] w-max'
             text='Forgot password?'
+            onClick={() => router.push('/dashboard')}
           />
           <div className='flex items-center justify-between'>
             <Button
               text='Sign In'
+              onClick={() => router.push('/dashboard')}
               className='w-[262px] md:w-[325px] h-[40px] bg-black rounded-[10px] text-white font-montserrat font-bold text-base'
             />
           </div>
@@ -103,6 +88,7 @@ const SignIn = () => {
             // onClick={() => signIn()}
             className='text-sm md:text-base font-lato text-[#346bd4]'
             text='Register here'
+            onClick={() => router.push('/dashboard')}
           />
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${montserrat.variable} ${lato.variable} ${openSans.variable}`}
+      className={`${montserrat.variable} ${openSans.variable} ${lato.variable} max-w-[1440px] max-h-[1024px] mx-auto bg-[#f5f5f5]`}
     >
       <body>{children}</body>
     </html>

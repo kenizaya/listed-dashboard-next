@@ -96,7 +96,7 @@ const ActivitiesCard = ({
 
   return (
     <div
-      className={`w-[400px] md:h-[360px] md:w-full rounded-[20px] pt-[30px] px-10 bg-white ${className}`}
+      className={` md:h-[360px] w-full rounded-[20px] pt-[30px] px-10 bg-white ${className}`}
     >
       <div className='flex justify-between'>
         <div className='flex flex-col gap-[5px] justify-between pb-7'>

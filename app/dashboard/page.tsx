@@ -8,7 +8,13 @@ import ScheduleCard from '../components/ScheduleCard'
 import TopProductsCard from '../components/TopProductsCard'
 import ActivitiesCard from '../components/ActivitiesCard'
 
-const page = ({ data }) => {
+const fetchData = async () => {
+  const response = await fetch('http://localhost:3000/api/handler')
+  const data = await response.json()
+  return data
+}
+
+const page = async () => {
   const {
     revenue: totalRevenue,
     transactions,
@@ -18,7 +24,7 @@ const page = ({ data }) => {
     guestVisits,
     userVisits,
     tasks,
-  } = data
+  } = await fetchData()
 
   const revenue = '/assets/icons/revenue.svg'
   const transaction = '/assets/icons/transaction.svg'
@@ -26,9 +32,9 @@ const page = ({ data }) => {
   const user = '/assets/icons/user.svg'
 
   return (
-    <div className='flex bg-[#f5f5f5] w-full pl-[40px]'>
+    <div className='flex bg-[#f5f5f5] w-full pl-[20px] md:pl-[40px]'>
       <Sidebar />
-      <div className='w-full bg-[#f5f5f5] py-[60px] pr-[60px]'>
+      <div className='w-full bg-[#f5f5f5] py-[20px] pr-[20px] md:py-[60px] md:pr-[60px]'>
         <Header />
         <div className='flex justify-center sm:justify-between items-center w-full gap-5 flex-wrap'>
           <TotalCard
@@ -61,7 +67,7 @@ const page = ({ data }) => {
           guestVisits={guestVisits}
           userVisits={userVisits}
         />
-        <div className='flex gap-10 flex-col sm:flex-row'>
+        <div className='flex gap-10 flex-col lg:flex-row'>
           <TopProductsCard topProducts={topProducts} />
           <ScheduleCard tasks={tasks} />
         </div>
