@@ -8,13 +8,16 @@ import {
 } from 'chart.js'
 import { Pie } from 'react-chartjs-2'
 import Image from 'next/image'
-// import { useDatContext } from '../context/dataContext'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
-const TopProductsCard = ({ topProducts }) => {
+type Product = {
+  name: string
+  sold: number
+}
+
+const TopProductsCard = ({ topProducts }: { topProducts: Product[] }) => {
   const downArrow = '/assets/icons/downArrow.svg'
-  // const { topProducts } = useDataContext()
 
   const data = {
     labels: topProducts.map((product) => product.name),
