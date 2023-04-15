@@ -36,7 +36,7 @@ const SignIn = () => {
         </div>
 
         <form
-          // onSubmit={() => signIn()}
+          onSubmit={() => router.push('/dashboard')}
           className='w-80 md:w-96 rounded-[20px] bg-white p-[30px] flex flex-col gap-5'
         >
           <div>
